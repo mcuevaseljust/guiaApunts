@@ -2,7 +2,7 @@
 
 Markdown es defineix com un **llenguatge de marques lleuger**, amb la finalitat d'escriure utilitzant un format de text pla, fàcil d'escriure i de llegir, i que puga convertir-se a altres formats, com HTML, epub o pdf.
 
-A la web (https://markdown.es/)[https://markdown.es/] disposeu de molta informació i un vídeo bastant bo sobre aquest llenguatge i algunes eines que us faciliten la vida a l'hora de generar documents.
+A la web [https://markdown.es/](https://markdown.es/) disposeu de molta informació i un vídeo bastant bo sobre aquest llenguatge i algunes eines que us faciliten la vida a l'hora de generar documents.
 
 Amb Markdown podem formatar el text amb lletres cursives, negretes, capçaleres o enllaços utilitzant únicament text pla, el que fa que l'escriptura siga més simple i eficient, ja que ens evita haver d'estar pensant en el format i ens permet centrar-nos només en el contingut. La seua facilitat d'us i sintaxi clara, junt amb que permet incloure i formatar codi font, fa que siga le llenguatge per excel·lència en llocs com Gihtub per tal de documentar els projectes que allotja.
 
