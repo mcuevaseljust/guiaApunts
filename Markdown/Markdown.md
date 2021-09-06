@@ -171,17 +171,17 @@ Genera:
 La sintaxi per afegir una imatge és semblant a la de l'enllaç, predecida d'una exclamació `!`:
 
 ```
-![Exemple d'imatge](./../img/UI.png)
+![Exemple d'imatge](./../img/anell.png)
 ```
 
 A més, podem indicar la grandària entre els símbols `{}` al final:
 
 ```
-![Exemple d'imatge](./../img/UI.png){ width=300px }
+![Exemple d'imatge](./../img/anell.png){ width=300px }
 ```
 
 ```
-![Exemple d'imatge](./../img/UI.png){ width=5cm }
+![Exemple d'imatge](./../img/anell.png){ width=5cm }
 ```
 
 Aquesta grandària de les imatges és respectada per Pandoc, però a Github, per exemple o altres conversions com HTML amb Hugo, no es respecta.
@@ -201,4 +201,4 @@ Markdown es un format de text, pel que qualsevol editor de text ens és suficien
 
 No obstant això, existeixen eines tipus Haroopad o editors Markdown online que proporcionen una finestra partida on podem escriure en format Markdown a una part, i veure'n el resultat en directe al costat.
 
-L'editor VSCode també suporta directament el llenguatge Markdown i ofereix un previsualització del que anem fent. No obstant això, existeixen extensions com *Markdwon All In One* que aporta altres funcionalitats com tecles d'accés ràpid, suport a taules de continguts, entre d'altres. (Consulteu el [document sobre VSCode per a més informació](../VSCode.md))
+L'editor VSCode també suporta directament el llenguatge Markdown i ofereix un previsualització del que anem fent. No obstant això, existeixen extensions com *Markdwon All In One* que aporta altres funcionalitats com tecles d'accés ràpid, suport a taules de continguts, entre d'altres. (Consulteu el [document sobre VSCode per a més informació](../VSCode/VSCode.md))
