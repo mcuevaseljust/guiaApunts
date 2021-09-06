@@ -189,7 +189,17 @@ Per resoldre-ho, podem intal·lar el paquet `texlive-lang-spanish`, o `texlive-l
 
 ## Treballant amb plantilles
 
+Pandoc permet treballar amb plantilles per a diversos tipus de documents (pdf, odt), que defineixen l'aspecte dels nostres documents.
 
+Si genereu un document pdf, per defecte utilitza la plantilla *estàndard* d'aquest tipus de documents amb Latex. No obstant això, podem indicar una altra plantilla amb l'opció --template:
+
+```
+pandoc fitxerEntrada -o fitxerEixida.pdf  --pdf-engine xelatex --template=nomPlantilla.latex
+```
+
+Disposeu de més informació sobre creació de plantilles a la [documentació de Pandoc](https://pandoc.org/MANUAL.html#templates).
+
+Al nostre cas, fem ús de la [plantilla Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template). 
 
 ## Manual
 
