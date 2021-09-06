@@ -21,4 +21,4 @@ Què pretenem amb tot açò?
 * [3. Pandoc](Pandoc/IntroPandoc.md)
 * [4. El bloc YAML](Pandoc/YAML.md)
 * [5. El paquet mdFactory](mdFactory/mdfactory.md)
-* [6. Presentacions] (presentacions/guia.md)
+* [6. Presentacions](presentacions/guia.md)
