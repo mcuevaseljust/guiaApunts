@@ -66,6 +66,8 @@ Amb el guió
 
 ```
 
+Disposeu de més informació sobre les capçaaleres a la [secció de Markdown manual del manual de Pandoc](https://pandoc.org/MANUAL.html#headings).
+
 ### Formatació de text
 
 ```markdown
@@ -190,6 +192,7 @@ Per a més informació sobre Markdown podeu consultar:
 
 * La guía de markdown en espanyol: [https://markdown.es/](https://markdown.es/) 
 * La sintaxi estesa de markdown a la web: [https://www.markdownguide.org/extended-syntax](https://www.markdownguide.org/extended-syntax)
+* La secció dedicada a Markdown al [Manual de Pandoc](https://pandoc.org/MANUAL.html#pandocs-markdown)
 
 
 ## Edició de fitxers Markdown
