@@ -29,16 +29,16 @@ Veiem un ressum d'allò més important respecta a la sintaxi:
 
 ### Paràgrafs
 
-    * Per definir paràgrafs, calen dos salts de línia.
-    * Amb un salt de línia, s'entén que és el mateix paràgraf.
-    * Si volem incloure un salt de línia a meitat del paràgraf, afegirem al menys dos espais al final de la línia.
+* Per definir paràgrafs, calen dos salts de línia.
+* Amb un salt de línia, s'entén que és el mateix paràgraf.
+* Si volem incloure un salt de línia a meitat del paràgraf, afegirem al menys dos espais al final de la línia.
 
-    ```markdown
-    Paràgraf 1
+```markdown
+Paràgraf 1
 
-    Paràgraf 2, amb espais al final...  
-    per forçar un salt de línia.
-    ```    
+Paràgraf 2, amb espais al final...  
+per forçar un salt de línia.
+```    
 
 ### Capçaleres
 
