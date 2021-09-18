@@ -8,6 +8,10 @@ En aquest directori trobareu una plantilla amb diferents scripts per a la genera
 
 La idea seria generar els fitxers en format Markdown en la mateix carpeta arrel de la plantilla, i utilitzar els diferents scripts per generar diferents eixides, sense necessitat d'instal·la el paquet mdfactory de la Justix.
 
+>
+> Actualització: Disposeu també dels scripts modificats per no haver de copiar tota la carpeta cada vegada. Mireu l'últim apartat per vore com fer-ho.
+>
+
 ## Contingut base de la carpeta
 
 * **Carpeta portades**: Conté diferents portades genèriques en svg, que podeu editar i adaptar per fer les vostres. Si en teniu ja generades i les voleu compartir, podeu afegir-les aci també.
@@ -90,3 +94,23 @@ Açò generarà una carpeta `unzippedSCORM`, amb el contingut del paquet descomp
 >
 
 
+## Instal·lació en local i scripts actualitzats
+
+Per no haver de copiar cada vegada la carpeta amb tots els fitxers que porta, podem fer el següent:
+
+1. Copiar el contingut de la carpeta PlantillaTema a la carpeta .local/share del vostre HOME (`~/.local/share/PlantillaTema`).
+
+2. Actualitzar el PATH per accedir a ella:
+
+```
+export PATH=$PATH:~/.local/share/PlantillaTema
+```
+
+Si voleu aquest canvi persistent, podeu afegir un script amb aquest codi al directori `/etc/profile.d/`.
+
+3. Utilitzar els script modificats, que són els mateixos que en l'apartat anterior, però sense l'extensió `.sh`:
+
+* `createPDF`
+* `createPDFall`
+* `createSCORM`: **COMPTE!** Aquest script, copia de manera temporal la carpeta `templates` al directori de treball on esteu, i després l'esborra, pel que eviteu tindre una carpeta amb aquest nom.
+* `prepareSCORM`: Aquest script és nou, i intenta *generar* automàticament el fitxer `content.yml`, a partir dels fitxers *.md* del directori actual i els títols que heu especificat a la capçalera (utilitza l'ordre head per a això, de manera que el títol haurà d'estar pel principi al markdown). Si tot va bé, només haureu de revisar l'ordre dels apartats i que els tìols apareguen (Si teniu cada fitxer numerat per l'apartat, ja ho fa automàticament)

@@ -1,5 +1,6 @@
 window.onload = function() {
     menuOpen = false;
+    //window.resizeTo(1024, 768);
 };
 
 function switchMenu() {

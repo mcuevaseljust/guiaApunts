@@ -2,7 +2,6 @@
 id: com.ieseljust.depinf.cicle.modul.tema
 title: Exemple per generar un curs SCORM
 
-# A comment just to say: list of persons
 items:
   - title: Markdown
     file: Markdown.html

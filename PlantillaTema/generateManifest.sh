@@ -3,7 +3,7 @@
 # shellcheck disable=SC1091
 
 # Configure
-set -e
+#set -e
 cd "$(dirname "${BASH_SOURCE[0]}")"
 source yaml.sh
 
@@ -13,7 +13,8 @@ create_variables content.yml
 # Mostra la secció de títols dels recursos
 print_titles(){
     echo -e "\t\t\t<title>$title</title>";
-    let len=${#items__title[@]}-1
+    let len=${#items__title[@]}-1  || 0
+
     for i in $(seq 0 ${len});do
         #echo "item ${i}: ${items__title[${i}]} -> ${items__file[${i}]}";
         echo -e "\t\t\t<item identifier=\"item_${i}\" identifierref=\"resource_${i}\">"
