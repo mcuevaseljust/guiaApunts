@@ -9,7 +9,7 @@ En aquest directori trobareu una plantilla amb diferents scripts per a la genera
 La idea seria generar els fitxers en format Markdown en la mateix carpeta arrel de la plantilla, i utilitzar els diferents scripts per generar diferents eixides, sense necessitat d'instal·la el paquet mdfactory de la Justix.
 
 >
-> Actualització: Disposeu també dels scripts modificats per no haver de copiar tota la carpeta cada vegada. Mireu l'últim apartat per vore com fer-ho.
+> Actualització: Disposeu també dels scripts modificats per no haver de copiar tota la carpeta cada vegada. Mireu l'[últim apartat per vore com fer-ho](#installació-en-local-i-scripts-actualitzats).
 >
 
 ## Contingut base de la carpeta
