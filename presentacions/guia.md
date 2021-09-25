@@ -8,20 +8,10 @@ _paginate: false
 _header: 'IES Jaume II "El Just'
 _footer: 'Curs 21/22'
 style: |
-  section.centrar h1{
+  h1{
     text-align: center;
     font-size: 150px;
     background-color: #ccc;
-  }
-  header, footer{ 
-    font-size: 90%;
-    text-align: center; 
-  }
-  p{
-    font-size: 100%
-  }
-  section.menor p, table, ul{
-    font-size: 80%
   }
 ---
 
