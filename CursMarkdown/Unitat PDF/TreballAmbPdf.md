@@ -79,17 +79,17 @@ pandoc-latex-environment:
 
 # Introducció
 
-En aquesta secció anem a veure algunes directives que ens poden resultar interessant per a la generació de PDF a partir dels nostres documents escrits amb markdown, combinades amb la plantilla `Eisvogel` que hem presentat a la unitat anterior. Es veuran certs aspectes de la configuració de les directives YAML que afecten a tot el document i passarem desprès a veure alguns aspectes que ens ajudaran a maquetar els nostres documents amb un acabat professional.
+En aquesta secció anem a veure algunes directives que ens poden resultar interessant per a la generació de PDF a partir dels nostres documents escrits amb markdown, combinades amb la plantilla `Eisvogel`. Es veuran certs aspectes de la configuració de les directives YAML que afecten a tot el document i passarem després a veure alguns aspectes que ens ajudaran a maquetar els nostres documents amb un acabat professional.
 
-Abans de començar cal comentar que processar amb pandoc un document de markdown és molt simple, però pot ser també molt potent. El conjunt d'etiquetes de markdown és molt simple i reduït, ja que està pensat més en el contingut que en la presentació. Com que pel camí de processar un md fins al pdf realitza una conversió (transparent a l'usuari) pel format tex (\LaTeX), això ens permet afegir comandaments de \LaTeX dins del nostre document. Com a contrapartida, dins d'un bloc Latex no podem afegir marques markdown, a menys que fem alguna coseta, com es veurà. El mateix ocòrre si posem codi HTML dins del nostre markdown
+La ferramenta que utilitzarem per dur a terme conversions entre arxius en markdown i pdf és [pandoc](https://pandoc.org/). Abans de començar cal comentar que processar amb pandoc un document de markdown és molt simple, però pot ser també molt potent. El conjunt d'etiquetes de markdown és molt simple i reduït, ja que està pensat més en el contingut que en la presentació. Com que pel camí de processar un md fins al pdf realitza una conversió (transparent a l'usuari) pel format tex (\LaTeX), això ens permet afegir comandaments de \LaTeX dins del nostre document. Com a contrapartida, dins d'un bloc Latex no podem afegir marques markdown, a menys que fem alguna coseta, com es veurà. El mateix ocòrre si posem codi HTML dins del nostre markdown.
 
 ::: note
 Partirem d'un arxiu de capçalera bàsic, on anirem afegint opcions. Al final del tema apareixerà un exemple complet de dit arxiu amb comnetaris indicant que fa cada cosa.
 :::
 
-# Configuracions globals del document. Capçalera YAML
+# Configuracions globals del document. Capçalera YAML o *front matter*
 
-Abans de començar a composar el document pròpiament dita hem de establir la configuració global del nostre document, ajustant-ho a la plantilla _eisvogel_ que comentem. Oferim ací una capçalera YAML, explicant cadascuna de les seues ocpions.
+Abans de començar a composar el document pròpiament dit, hem d'establir la configuració global del nostre document, ajustant-ho a la plantilla _eisvogel_ que comentem. Oferim ací una capçalera YAML, anomenada en l'argot *front matter*, explicant cadascuna de les seues ocpions.
 
 ```yaml
 ---
@@ -110,25 +110,27 @@ titlepage-rule-color: 65309
 titlepage-background: img/portada.png
 toc-own-page: true
 toc-title: Continguts
-header-left: UD 1. Introducció a Markdown
+header-left: UD 2. Passant a PDF
+header-center: \thesection
 header-right: Curs 2021-2022
-footer-left: IES Jaume II el Just - PSP
-footer-right: \thepage/\pageref{LastPage}
+footer-left: CEFIRE
+footer-center: Markdown para la creación de recursos
+footer-right: \thepage de \pageref{LastPage}
 ---
 ```
 
 
 ## Metainformació del document
 
-Els camps `title`, `subtitle`, `author` i `abstract` indiquen tal i com representa el títol i subtítol, autors i resum del document. Aquesta informació s'inserta automàticament a la portada menys el resum que s'inserirà a la primera fulla desprès de la taula de continguts. Aquesta informació podriem posar-la _ad-hoc_, però resulta més còmode d'aquesta manera, donat que podrem referenciar-la des de tot el document mitjançant etiquetes Latex, com poden ser `\thetitle` o `\theauthor`.
+Els camps `title`, `subtitle`, `author` i `abstract` indiquen, tal i com indica, el títol i subtítol, autors i resum del document. Aquesta informació s'inserta automàticament a la portada, menys el resum que s'inserirà a la primera fulla desprès de la taula de continguts. Aquesta informació podriem posar-la _ad-hoc_, però resulta més còmode d'aquesta manera, donat que podrem referenciar-la des de tot el document mitjançant etiquetes Latex, com poden ser `\thetitle` o `\theauthor`.
 
 ## Opcions de la pàgina del títol
 
 - `titlepage: true` indica que volem una pàgina sencera per a títol.
 - `titlepage-rule-height:mesura`  indica el grossor en punts d'una línea decorativa. Posar 0 si no volem tal línea.
-- `titlepage-rule-color:RRGGBB` color de la línia.
-- `titlepage-text-color:RRGGBB` color del text del títol.
-- `titlepage-background:ruta_a_imatge` si volem posar una imatge de fons de la portada. L'ideal és combinar alguna imatge que tingui algun espai en blanc o en color suau (com puga ser una pissarra o finestra) i aprofitar dit espai per a ubicar el títol del document.
+- `titlepage-rule-color:RRGGBB` color de la línia en format RGB, on cada xifra és un hexadecimal.
+- `titlepage-text-color:RRGGBB` color del text del títol en format RGB, on cada xifra és un hexadecimal.
+- `titlepage-background:ruta_a_imatge` si volem posar una imatge de fons de la portada. L'ideal és combinar alguna imatge que tinga algun espai en blanc o en color suau (com puga ser una pissarra o finestra) i aprofitar dit espai per a ubicar el títol del document.
 
 ::: tip
 - El color serà una valor en hexadecimal indicant la combinació RGB. Existeixen molts programes i/o webs que permeten seleccionar colors, com per exemple <https://htmlcolorcodes.com/es/>
@@ -137,9 +139,9 @@ Els camps `title`, `subtitle`, `author` i `abstract` indiquen tal i com represen
 
 ## Índex o taula de continguts
 
-pandoc pot generar-nos automàticament la taula de continguts del nostre document, així com mantenir-la actualitzada amb la numeració de cada secció així com en quina pàgina apareix cada secció i altres. El requisit indispensable és afegir l'opció `--toc` (_table of contents_) per a que pandoc processes les marques de capçalera (`#`, `##`) com indicador de seccions.
+pandoc pot generar-nos automàticament la taula de continguts del nostre document, així com mantenir-la actualitzada amb la numeració de cada secció així com en quina pàgina apareix cada secció i altres. El requisit indispensable és afegir l'opció `--toc` (_table of contents_) per a que pandoc processe les marques de capçalera (`#`, `##`) com indicador de seccions.
 
-Ademès, no cal numerar les sección, llavors en compte de fer:
+A més a més, no cal numerar les sección, llavors en compte de fer:
 
 ```md
 # 1. Introducció
@@ -172,7 +174,7 @@ Si volem canviar el nom de la taula de continguts (per defecte serà **Índice**
 - toc-title: Continguts
 ```
  
-Altra opció interessant és la profunditat de la taula de continguts, és a dir, fins a quin nivell de sub-sub-secció hem de mostrar a la taula de continguts. Aquesta opció deu de ser:
+Altra opció interessant és la profunditat de la taula de continguts, és a dir, fins a quin nivell de sub-sub-secció hem de mostrar a la taula de continguts. Aquesta opció ha de ser:
 
 ```yaml
 - toc-depth: numero  # nivell de profunditat
@@ -183,15 +185,15 @@ Altra opció interessant és la profunditat de la taula de continguts, és a dir
 Amb la capçalera YAML ens apareixen del directives per a controlar els encapçalats i peus de pàgina, de manera molt senzilla combinant totes aquestes: `[footer|header-left|center|right]`:
 
 ```yaml
-header-left: UD 1. Introducció a Markdown
+header-left: UD 2. Passant a PDF
 header-center: \thesection
 header-right: Curs 2021-2022
-footer-left: IES Jaume II el Just
-footer-center: MD
+footer-left: CEFIRE
+footer-center: Markdown para la creación de recursos
 footer-right: \thepage de \pageref{LastPage}
 ```
 
-Com podeu veure, poden inclou-re's referències a la pàgina actual (`\thepage`), saber el nombre de pàgines `\pageref{LastPage}`, quina és la secció actual (el número no el nom) i fins i tot el dia actual (`today`).
+Com podeu veure, poden inclou-re's referències a la pàgina actual (`\thepage`), saber el nombre de pàgines `\pageref{LastPage}`, quina és la secció actual (el número, no el nom) i fins i tot el dia actual (`today`).
 
 
 
@@ -207,9 +209,9 @@ Si volem incloure una marca d'aigua a totes les pàgines del nostre document, te
 ```
 
 - A la primera, indicarem la ruta a la imatge, tenint en compte que la imatge serà reescalada al tamany del paper (normalment A4), per la qual cosa escollir-la amb cura per a que no quede desproporcionada
-- A la segona, s'indica el percentage d'opacitat, seguent 1 el 100%. Es recomana no siga elevada, donat que podriem _tapar_ el text.
+- A la segona, s'indica el percentage d'opacitat, seguent 1 el 100% i 0 el 0%. Es recomana no siga elevada, donat que podriem _tapar_ el text. Sobre un 20% pot estar bé.
 
-2. amb el paquet `draftwatermark` de \LaTeX
+2. Amb el paquet `draftwatermark` de \LaTeX
 
 Aquest paquet ens permet posar tant una imatge com un text, rotar-lo i modificar-li el tamany, tal i com s'intueix de l'exemple següent.
 
@@ -284,7 +286,7 @@ Llavors crearem les caixes com si fos un bloc de codi, però en compte de tancar
 
 ```md
 ::: note
-Anotació:   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque justo sit amet urna aliquam, dictum egestas felis dapibus.
+Anotació:   Lorem ipsum dolor sit amet, consectetur ad<ipiscing elit. Mauris pellentesque justo sit amet urna aliquam, dictum egestas felis dapibus.
 :::
 
 ::: tip
