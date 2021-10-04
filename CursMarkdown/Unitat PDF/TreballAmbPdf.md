@@ -204,7 +204,7 @@ Si volem incloure una marca d'aigua a totes les pàgines del nostre document, te
 1. Pròpia de la pantilla, afegint les següents directives:
 
 ```yaml
-- page-background: ruta_a imatge
+- page-background: ruta_a_la_imatge
 - page-background-opacity: [0-1] 
 ```
 
@@ -334,7 +334,7 @@ Important: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pelle
 
 En aquest últim apartat anem a veure una serie de _fórmules_ per a aconseguir alguns efectes de presentació més professionals. Recordar que l'objectiu del Markdown és centrar-se en el contingut i no en l'aspecte, però sempre que produim un PDF l'aspecte final del mateix és fonamental.
 
-Per a moltes d'aquestes fórmules recurrirem als comandaments de \LaTeX, ja que com es diu _LaTeX és una imprenta a les teues mans_ i tot que pot resultar molt complicat al principi és molt potent.
+Per a moltes d'aquestes fórmules recurrirem als comandaments de \LaTeX, ja que com es diu _LaTeX és una imprenta a les teues mans_ i, tot i que pot resultar molt complicat al principi, és molt potent.
 
 ## Imatges i Columnes
 
@@ -385,7 +385,7 @@ Fixar-se que:
   
 ::: tip
 
-\LaTeX també inclpu l'opció de mesurar les imatge com a percentatge de l'ample de la pàgina, posant-ho `width=0.3\linewidth` (es veurà al següent exemple)
+\LaTeX també inclou l'opció de mesurar les imatge com a percentatge de l'ample de la pàgina, posant `width=0.3\linewidth` (es veurà al següent exemple)
 :::
 
 Si volem situar dos o més imatges una al costat de l'altra, haurem de recòrrer al paquet `subfigure`. Mirem l'exemple següent:
@@ -410,7 +410,7 @@ el que ens dona:
 \caption{Mosaic.}
 \end{figure}
 
-Fixar-se que la generació d'una de les imatges menudes te les parts `\subfigure[retol]{\includegraphics[tamany]{imatge}`:
+Fixar-se que la generació d'una de les imatges menudes té les parts `\subfigure[retol]{\includegraphics[tamany]{imatge}`:
 - El `retol`, que queda identificat automàticament.
 - la imatge, tal i com feiem abans, amb la seua dimensió i ruta 
 
@@ -448,7 +448,7 @@ em: amplària de la lletra `m`
 px: Pixel (sols per a  pdfTeX i LuaTeX)
 ```
 
-Un cop definides les opcions i mesures, l'unic que em de fer per composar un text o porció del mateix entre columnes és:
+Un cop definides les opcions i mesures, l'unic que hem de fer per composar un text o porció del mateix entre columnes és:
 
 ```latex
 \begin{multicols}{nombre de columnes}
@@ -482,7 +482,7 @@ Com estem dins d'un entorn \LaTeX, és a dir, entre un `\begin` i un `\end`, lla
 
 #### Redefinint els blocs de \LaTeX
 
-Per solucinoar el problema vist anteriorment, la solució és fer creure a \LaTeX que no està dins d'un bloc \LaTeX, així podem seguir fent servir Markdown sense problema. Per a fer-ho hem de **redefinir** els comandaments `\begin` i `\end`, afegint en l'encapçalment:
+Per solucionar el problema vist anteriorment, la solució és fer creure a \LaTeX que no està dins d'un bloc \LaTeX, així podem seguir fent servir Markdown sense problema. Per a fer-ho hem de **redefinir** els comandaments `\begin` i `\end`, afegint en l'encapçalament:
 
 ```yaml
   - \newcommand{\hideFromPandoc}[1]{#1}
@@ -492,7 +492,7 @@ Per solucinoar el problema vist anteriorment, la solució és fer creure a \LaTe
       }
 ```
 
-A partir d'ara en compte de `\begin` i `\end` haurem de posar `\Begin` i `\End`, en majúscules, com veurem a continuació. Aques paràgraf inicial:
+A partir d'ara en compte de `\begin` i `\end` haurem de posar `\Begin` i `\End`, en majúscules, com veurem a continuació. Aquest paràgraf inicial:
 
 ```latex
 \begin{multicols}{2}
@@ -512,7 +512,7 @@ Nullam nec elit eget erat aliquam tempus vel vitae velit. Vivamus non ante volut
 \end{multicols}
 
 
-Podem comprovar que al text tenim unes paraules que no les ha formatat (les que voliem posar en negreta, cursiva i ambdues coses), a l'igual que la llista. Al canviar les ordres d'inici i fi per `\Begin` i `\End` com es veu a continuació:
+Podem comprovar que al text tenim unes paraules que no les ha formatat (les que voliem posar en negreta, cursiva o ambdues coses), a l'igual que la llista. Al canviar les ordres d'inici i fi per `\Begin` i `\End` com es veu a continuació:
 
 ```latex
 \Begin{multicols}{2}
@@ -536,7 +536,7 @@ Nullam nec elit eget erat aliquam tempus vel vitae velit. Vivamus non ante volut
 
 ::: warning
 
-Fixar-se que cal posar una linea en blanc abans del `\End{multicols}` per a que funcione de manera adequada, degut a la traducció que fa el preprocessador de \LaTeX entre el `\Begin` i el `\begin`
+Fixeu-se que cal posar una linea en blanc abans del `\End{multicols}` per a que funcione de manera adequada, degut a la traducció que fa el preprocessador de \LaTeX entre el `\Begin` i el `\begin`
 :::
 
 
@@ -559,14 +559,14 @@ contingut en horitzontal
 Tot el que posem dins del contingut apaïssat provocarà automàticament un **bot de pàgina** des del punt on ens hem quedat en vertical, al contingut ja en horizontal, i quan acabe el contingut apaïssat ens posarà de nou un bot de línea al vertical.
 
 ::: note
-Si volem posar un bot de pàgina on ens interesse, com per exemple al principi de cada secció, podem posar el comandament de \LaTeX `\newpage`
+On ens interesse posar un bot de pàgina, com per exemple al principi de cada secció, podem posar el comandament de \LaTeX `\newpage`
 :::
 
 ::: warning
 Atenció de nou, com estem dins d'un bloc \LaTeX, no podrem posar elements de Markdown com negreta, llista d'elements, seccions, etc. La solució de nou és fer servir com a inici i final del bloc apaïssat les instruccions `\Begin` i `\End`, tal i com hem definit en l'apartat de les columnes. La mateixa definició serveix per a ambós elements. Recordar que abans de `\End{seccio}` cal deixar una línia en blanc.
 :::
 
-# Arxiu `yaml` amb totes les opcions
+# *Front matter* `yaml` amb totes les opcions
 
 ```yaml
 ---
@@ -657,4 +657,5 @@ Les opcions que deuen d'apareixer a la crida a `pandoc` seran:
   --variable urlcolor=cyan  # color per a les URL
   --filter pandoc-latex-environment  # enviar a latex les constants
   --listings            # interpretar els blocs de codi
+  --pdf-engine xelatex
 ```
