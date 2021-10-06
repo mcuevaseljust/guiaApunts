@@ -16,6 +16,7 @@ titlepage-text-color: EE0000
 titlepage-background: ./img/portada.png
 
 # configuració de l'índex
+toc: true
 toc-own-page: true
 toc-title: Continguts
 toc-depth: 2
@@ -324,9 +325,21 @@ Disposeu de més informació sobre creació de plantilles a la [documentació de
 
 Al nostre cas, fem ús de la [plantilla Eisvogel](https://github.com/Wandmalfarbe/pandoc-latex-template). 
 
+::: important
+Abans de descarregar la plantilla, però, instal·larem el paquet de programari *texlive-fonts-extra*, que inclou diverses tipografies, entre les quals es troben les que s'utilitzen en aquesta plantilla, i les icones *Awesome*, que utilitzarem en caixes de diàlegs. Aquesta instal·lació, podem fer-la bé des de l'eina Synaptic, com des de la línia d'ordres amb:
+
+```bash
+sudo apt install texlive-fonts-extra
+```
+
+Abans d'això, caldrà habilitar els repositoris de programari d'Ubuntu en LliureX, la qual cosa podeu fer a través de l'eina *RepoMan*.
+
+:::
+
 Per descarregar la plantilla, accedim a l'enllaç, i fem click al botó *Code*, per seleccionar l'opció *Download ZIP*. Si teniu coneixements de Git i Github, podeu clonar també el repositori. 
 
 ![Descàrrega de la plantilla Eisvogel](img/github_eisvogel.png){ width=300px }
+
 
 Una vegada descarregada, la descomprimim a una carpeta, i la referenciem amb `--template` mitjançant la ruta relativa, quan volguem utilitzar-la. Per exemple, si tenim la següent organització de carpetes:
 
@@ -350,3 +363,92 @@ I estem ubicats a la carpeta *Documents*, per afegit la plantilla a la conversi�
 ```bash
 pandoc Document.md -o Document.pdf --pdf-engine=xelatex --template=pandoc-latex-template-master/eisvogel.tex
 ```
+
+# Metadades dels documents
+
+Els documents que generem amb Markdown, poden contenir una bloc de metadades o *front-matter*, que especifica algunes propietats del document, com puguen ser el títol, el subtítol o l'autor. També podem incloure algunes directrius per al format final del document, com el peu o la capçalera de les pàgines, la numeració, etc.
+
+Per exemple, la plantilla *Eisvogel* que utilitzem utilitza aquesta informació, per tal de generar tant el document com la pàgina de portada, a la que podem incorporar imatges de fons, logotipus, etc.
+
+## El format YAML
+
+Aquest bloc de metadades s'expressa en un format anomenat YAML, que podria considerar-se altre llenguatge de marcat lleuger, però més orientat a documents que estableixen certes propietats.
+
+Es tracta d'un bloc que es sitúa generalment a la part superior del fitxer, i que comença i acaba amb tres guions (`---`). El fet de situar al bloc al principi és perquè ens dona una visió general de la informació del document només obrir-lo, però pot anar en qualsevol lloc del document. 
+
+Com que *Pandoc* permet incloure diversos fitxers en la conversió, podriem utilitzar un fitxer YAML per tal de conserver les metadades en aquest, i passar-lo com si fora un fitxer font més. Per exemple:
+
+```
+pandoc seccio1.md seccio2.md seccio3.md metadades.yaml -s -o tema.html
+```
+
+Alternativament, també podem utilitzar l'opció `--metadata-file`.
+
+### Sintaxi YAML 
+
+* L'estructura del document ve determinada per la **indentació amb espais en blanc** (no tabulacions).
+* Les **llistes** d'elements comencen amb un guió (`-`), o bé, si es posen en una sola línia entre corxetes (`[]`) i separades per una coma i espai (`, `).
+* ELs **vectors** associatius es representen amb els dos punts, seguits d'un espai, en la forma `clau: valor`, amb un component per línia, si volem afegir diversos components en una línia els tanquem entre claus i els separem amb una línia i un espai, (`{clau1: valor1, clau2: valor2 }`).
+* Els **valoes escalars simples** apareixen sense cometes, però poden anar entre cometes dobles (`"`) o simples (`'`).
+* Podem afegir **comentaris** precedint la línia amb `#`.
+* Recordeu que quan utilitzem una coma o un punt com a separador, cal afegir un espai al darrere. D'aquesta manera, podem representar valors escalars amb signes de puntuació sense necessitat d'afegir cometes.
+* Si un valor conté, per exemple el signe dels dos punts, aquest s'ha d'escapar, i si té la contrabarra, cal assegurar-se que no es tracte com a seqüències d'escapada YAML. 
+* Podem utilitzar canonades per iniciar un bloc de sagnat que s'interpretarà literalment, sense necessitat d'escapa res. És útil quan un camp conté línes en blanc.
+
+## Exemple 
+
+Aquest és un exemple de bloc YAML de metadades per a un document, on es defineixen diferents valors que després es poden utilitzar en la plantilla.
+
+```yaml
+---
+title: Introducció a Markdown
+subtitle: Afegint metadades amb YAML
+author: 
+- Ferran
+- Joan
+- Jose
+abstract: |
+  YAML és un altre llenguatge de marcat lleuger (YAML Ain't a Markup Language)
+
+  El bloc de metadades d'un document va expressat amb aquest format.
+lang: ca
+titlepage: true
+titlepage-rule-height: 0
+titlepage-rule-color: 653097
+toc-own-page: true
+toc-title: Continguts
+header-left: \thetitle
+header-right: Curs 2021-2022
+footer-left: CEFIRE València
+footer-right: \thepage/\pageref{LastPage}
+titlepage-background: img/portada.png
+---
+```
+
+::: tip
+***¡Que no cunda el pánico!***
+
+En aquest apartat hem vist molts detalls tècnics, que no teniu per què conéixer en detall. Simplement, fixeu-vos en els exemples de blocs per a la capçalera que us anem facilitant i adaptant-los segons les vostres necessitats.
+:::
+
+# Instal·lacions addicionals
+
+Abans de continuar farem la instal·lació d'alguenes eines addicionals per al sistema LaTeX. 
+
+Latex té una estructura modular, el que significa que podem afegir nous  mòduls, per tal d'ampliar-ne la funcionalitat. Per exemple, anteriorment, hem parlat del paquet *awesomebox* que ens permet afegir caixes de text amb les icones *Awesome*. Aquest paquet, necessitarà per exemple d'algunes funcionalitat de LaTeX com els *filtres*. 
+
+La instal·lació d'aquests components de LaTeX és bastant diferent a com instal·lem programari en Ubuntu/LliureX. Els mòduls o paquets de funcionalitat de LaTeX es distribuiexen mitjançant paquets de programari Python, pel que necessitaran una eina específica per a la seua gestió. Aquesta eina s'anomena *pip* (*Package Installer for Python*). 
+
+Així doncs, en primer lloc, instal·lem *pip* a través de Synaptic o apt:
+
+```bash
+sudo apt install pip
+```
+
+I després instal·lem els següents paquets Python amb pip:
+
+```bash
+sudo pip install pandoc-extract-code pandocfilters pandoc-latex-environment
+```
+
+Amb la qual cosa, ja podreu utilitzar els filtres i treballar amb les caixes Awesome, com veurem al següent document.
