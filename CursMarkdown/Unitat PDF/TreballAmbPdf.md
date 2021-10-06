@@ -39,15 +39,17 @@ header-includes:
   #  imatges i subfigures
   - \usepackage{graphicx}
   - \usepackage{subfigure}
+  - \usepackage{lastpage}
+
 
 
   #  - \usepackage{adjustbox}
   # marca d'aigua
-  - \usepackage{draftwatermark}
+  #- \usepackage{draftwatermark}
  # - \SetWatermarkText{\includegraphics{./img/Markdown.png}}
-  - \SetWatermarkText{Per revisar}
-  - \SetWatermarkScale{.5}
-  - \SetWatermarkAngle{20}
+  #- \SetWatermarkText{Per revisar}
+  #- \SetWatermarkScale{.5}
+  #- \SetWatermarkAngle{20}
    
   # caixes d'avisos 
   - \usepackage{awesomebox}
