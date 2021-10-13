@@ -40,15 +40,17 @@ header-includes:
   #  imatges i subfigures
   - \usepackage{graphicx}
   - \usepackage{subfigure}
+  - \usepackage{lastpage}
+
 
 
   #  - \usepackage{adjustbox}
   # marca d'aigua
-  - \usepackage{draftwatermark}
+  #- \usepackage{draftwatermark}
  # - \SetWatermarkText{\includegraphics{./img/Markdown.png}}
-  - \SetWatermarkText{Per revisar}
-  - \SetWatermarkScale{.5}
-  - \SetWatermarkAngle{20}
+  #- \SetWatermarkText{Per revisar}
+  #- \SetWatermarkScale{.5}
+  #- \SetWatermarkAngle{20}
    
   # caixes d'avisos 
   - \usepackage{awesomebox}
@@ -658,5 +660,9 @@ Les opcions que deuen d'apareixer a la crida a `pandoc` seran:
   --variable urlcolor=cyan  # color per a les URL
   --filter pandoc-latex-environment  # enviar a latex les constants
   --listings            # interpretar els blocs de codi
+<<<<<<< HEAD
+```
+=======
   --pdf-engine xelatex
 ```
+>>>>>>> 7e474ca08b23ff45caec9ed83541ba999e81dfc1
