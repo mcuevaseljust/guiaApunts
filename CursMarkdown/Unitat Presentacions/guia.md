@@ -71,7 +71,7 @@ L'única cosa que heu d'instal·lar és l'extensió ***Marp for VS Code*** dels 
 
 ---
 # Començant amb Marp
-El primer que hauriem de fer és crear un document markdown. Al front matter (capçalera YAML) definirem que volem habilitar l'extensió marp per poder previsualitzar la presentació. Si previsualitzem el resultat, obtindrem una imatges com la següent.
+El primer que hauriem de fer és crear un document markdown. Al front matter (capçalera YAML) definirem que volem habilitar l'extensió marp per poder previsualitzar la presentació. Si previsualitzem el resultat, obtindrem una imatge com la següent.
 
 ```markdown
 ---
@@ -476,13 +476,15 @@ Finalment seleccionem el format que volem i el nom d'arxiu a la finestra de l'ex
 
 ---
 # Exportació a html
-Si exporteu a html, veureu que vos crea un arxiu html de presentació per a ser visualitzat amb el navegador, on podem anar passant les diapositives amb les fletxes del teclat, amb el ratolí, etc 
+Si exporteu a html, veureu que vos crea un arxiu html de presentació per a ser visualitzat amb el navegador, on podem anar passant les diapositives amb les fletxes del teclat, amb el ratolí, veure'l a pantalla completa, etc 
 
-Si treballeu d'esta manera, recordeu que la carpeta des d'on hem carregat les imatges o altres recursos han d'estar en la mateixa ruta des de la qual es van insertar perquè es carreguen de forma correcta, igual que feiem en markdown.
+Si treballeu d'esta manera (altament recomanat), recordeu que la carpeta des d'on hem carregat les imatges o altres recursos han d'estar en la mateixa ruta des de la qual es van insertar perquè es carreguen de forma correcta, igual que feiem en markdown.
 
 ---
 # Marp-cli
-Si eres dels que preferix la consola, pots instal·lar l'aplicació de consola marp i utilitzar-la. S'ha d'instal·lar primer el *nodejs* (versió 12 almenys), després el seu gestor de paquest *npm*. Per últim instal·lem *marp*. Instal·leu el *chromium-browser* sols en cas de no tindre el *Google-Chrome* instal·lat.
+Si eres dels que preferix la consola, pots instal·lar l'aplicació de consola marp i utilitzar-la. S'ha d'instal·lar primer el *nodejs* (versió 12 almenys), després el seu gestor de paquest *npm* i per últim instal·lem *marp*. 
+
+> :fire: Instal·leu el *chromium-browser* sols en cas de no tindre el *Google-Chrome* instal·lat.
 
 ~~~bash
 $ curl -sL https://deb.nodesource.com/setup_14.x | sudo bash - 
@@ -564,7 +566,9 @@ El teu navegador no soporta l'etiqueta video. Actualitza'l.
 
 ---
 # Insertem un video de youtube
-La majoria de plataformes de video, ja et donen el codi html per poder-lo insertar-lo a la teua web o al teu curs d'aules. L'utilitzem d'igual forma a la nostra presentació. Per exemple, per a insertar el curt *Pipas* des de youtube, el busquem a la web de youtube i fem clic al botó *Comparteix*. Després seleccionem *<>Insereix* i copiem el codi que ens proporciona a la presentació.
+La majoria de plataformes de video, ja et donen el codi html per poder-lo insertar-lo a la teua web o al teu curs d'aules. L'utilitzem d'igual forma a la nostra presentació. 
+
+Per exemple, per a insertar el curt *Pipas* des de youtube, el busquem a la web de youtube i fem clic al botó *Comparteix*. Després seleccionem *<>Insereix* i copiem el codi que ens proporciona a la presentació.
 
 ```html
 <iframe width="560" height="315" 
@@ -574,6 +578,9 @@ La majoria de plataformes de video, ja et donen el codi html per poder-lo insert
   allowfullscreen>
 </iframe>
 ```
+
+---
+# Curtmetratge *Pipas*
 <iframe width="560" height="315" 
   src="https://www.youtube.com/embed/H1v-bCyeIR4" 
   title="YouTube video player" frameborder="0" 
