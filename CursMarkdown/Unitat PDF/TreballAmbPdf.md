@@ -14,7 +14,7 @@ lang: ca
 titlepage-rule-height: 2
 titlepage-rule-color: AA0000
 titlepage-text-color: AA0000
-titlepage-background: ./img/portada.png
+titlepage-background: ../portades/U2.png
 
 # configuració de l'índex
 toc-own-page: true

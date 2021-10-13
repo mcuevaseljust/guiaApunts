@@ -46,7 +46,7 @@ header-includes:
   # marca d'aigua
   - \usepackage{draftwatermark}
  # - \SetWatermarkText{\includegraphics{./img/Markdown.png}}
-  - \SetWatermarkText{Per revisar}
+  - \SetWatermarkText{}
   - \SetWatermarkScale{.5}
   - \SetWatermarkAngle{20}
    
@@ -143,7 +143,7 @@ Per a això, amb un arxiu markdown obert, pulseu F1 o Ctl + Shift + P, i escrivi
 
 Seguidament ens demanarà si volem exportar a pdf a html o a docx. Seleccionem pdf i si tot ha anat bé, en uns segons ens generarà el pdf amb el mateix nom d'arxiu que l'arxiu md original. S'obri automàticament al lector de pdf per defecte.
 
-![Generació de pdf](img/pdf_docx_html.png){width=10cm}
+![Generació de pdf](img/pdf_docx_html.png){width=8cm}
 
 Si heu tingut qualsevol error, vscode vos el mostrarà amb informació de quin ha sigut el problema. Els problemes més freqüents amb les seues solucions solen ser:
 - No troba la plantilla - Mira que està a la ruta per defecte
