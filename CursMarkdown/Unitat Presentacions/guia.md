@@ -217,6 +217,18 @@ Numerada
 ![exemple3 w:900](images/exemple3.png)
 
 ---
+# Insertar emojis
+La inserció d'emojis no és una característica exclusiva de les presentacions però encara no s'havia comentat. 
+
+Podeu fer ús de marques per a insertar emojis. Al següent enllaç teniu una llista quasi completa.
+
+[Llista d'emojis amb les seues marques](https://gist.github.com/rxaviers/7360908)
+
+Per exemple, per a insertar un emoji d'una cara somrient, utilitzarem `:smile:`.
+
+:smile:
+
+---
 
 # Tractament d'imatges
 
