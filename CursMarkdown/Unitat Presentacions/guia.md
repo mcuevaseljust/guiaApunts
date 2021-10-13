@@ -593,3 +593,5 @@ Your browser does not support the audio element.
 ---
 # Altre material multimèdia
 Al tindre activa l'opció d'html, ara podem insertar qualsevol cosa que es puga insertar a una pàgina web, vídeo, àudio, adreça de google maps, aplicacions web, ...
+
+Una altra forma d'insertar elements multimèdia d'internet és afegir el seu enllaç de forma que al fer clic s'obriga en un navegador web o en una pestanya nova del navegador. 
