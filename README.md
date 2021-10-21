@@ -25,4 +25,4 @@ Què pretenem amb tot açò?
 
 |Nombre|Apellidos|
 |------|---------|
-|Manolo|Cuevas|
+|Manuel|Cuevas|
