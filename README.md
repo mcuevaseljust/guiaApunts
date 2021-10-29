@@ -26,4 +26,4 @@ Què pretenem amb tot açò?
 |Nombre|Apellidos|
 |------|---------|
 |Manuel|Cuevas|
-|María|Torres|
+|EDD|DAM|
