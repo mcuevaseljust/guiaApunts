@@ -25,7 +25,9 @@ Què pretenem amb tot açò?
 
 |Nombre|Apellidos|
 |------|---------|
-|Manuel|Cuevas|
+|Anais|Soriano|
 |EDD|DAM|
 |Jonathan|Granell|
 |EDD|DAM|
+|lolovall|EDD|
+
