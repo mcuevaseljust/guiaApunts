@@ -27,3 +27,5 @@ Què pretenem amb tot açò?
 |------|---------|
 |Manuel|Cuevas|
 |EDD|DAM|
+|Jonathan|Granell|
+|EDD|DAM|
