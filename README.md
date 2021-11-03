@@ -27,3 +27,4 @@ Què pretenem amb tot açò?
 |------|---------|
 |Anais|Soriano|
 |EDD|DAM|
+|lolovall|EDD|
