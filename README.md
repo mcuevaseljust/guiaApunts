@@ -25,5 +25,5 @@ Què pretenem amb tot açò?
 
 |Nombre|Apellidos|
 |------|---------|
-|Manuel|Cuevas|
+|Vicent|Noguera|
 |EDD|DAM|
