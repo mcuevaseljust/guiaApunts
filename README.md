@@ -27,3 +27,4 @@ Què pretenem amb tot açò?
 |------|---------|
 |Manuel|Cuevas|
 |EDD|DAM|
+|Jordi|Soriano|
