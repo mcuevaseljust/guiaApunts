@@ -29,5 +29,5 @@ Què pretenem amb tot açò?
 |EDD|DAM|
 |Jonathan|Granell|
 |EDD|DAM|
-|lolovall|EDD|
+|Manolo|EDD|
 
