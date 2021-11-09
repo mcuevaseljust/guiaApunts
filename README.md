@@ -30,4 +30,4 @@ Què pretenem amb tot açò?
 |Jonathan|Granell|
 |EDD|DAM|
 |lolovall|EDD|
-
+|Pau|Mahiques Garcia|
