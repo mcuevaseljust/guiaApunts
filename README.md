@@ -25,6 +25,8 @@ Què pretenem amb tot açò?
 
 |Nombre|Apellidos|
 |------|---------|
+|Alejandro|Benavent|
+|EDD|DAM|
 |Anais|Soriano|
 |EDD|DAM|
 |Jonathan|Granell|
